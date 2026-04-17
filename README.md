@@ -44,7 +44,7 @@ The observed pattern of repeated failed login attempts within a short time windo
 
 In real-world environments, such activity may indicate an attacker attempting to gain unauthorized access by trying multiple password combinations.Although this was a controlled simulation, the detection approach remains the same for real incidents.
 
-Further investigation would require validating source IP and login origin in a real-world environment.
+Further investigation would require validating source IP and login origin in a real-world environment. This activity would require further validation of source origin and correlation with additional logs in a real-world SOC environment.
 
 ---
 
@@ -84,3 +84,8 @@ Further investigation would require validating source IP and login origin in a r
 This project demonstrates how simple log analysis can be used to detect suspicious authentication behavior.
 
 Such techniques are fundamental in Security Operations Centers (SOC) for identifying potential threats and responding to unauthorized access attempts.
+
+---
+
+## ℹ️ Note
+This project was performed in a controlled environment for learning purposes.
