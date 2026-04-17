@@ -1,47 +1,63 @@
-# Brute Force Detection using Windows Event Logs
+# Windows Brute Force Detection using Log Analysis
 
-## 📌 About this Project
+## 📌 Overview
 
-In this project, I simulated a brute force login scenario on my local Windows machine and analyzed the generated logs using Event Viewer.
+This project demonstrates how failed authentication attempts can be detected and analyzed using Windows Security logs.
 
-The goal was to understand how failed login attempts are recorded and how such patterns can indicate suspicious activity.
+A controlled brute force scenario was simulated on a local system to understand how repeated login failures are recorded and how such patterns can indicate potential unauthorized access attempts.
 
 ---
 
-## 🛠️ What I Used
+## 🛠️ Environment
 
 - Windows OS (Local Machine)
-- Event Viewer
+- Windows Event Viewer
 
 ---
 
-## 🔍 What I Did
+## 🔍 Investigation Process
 
-- Entered incorrect passwords multiple times on the lock screen
-- Opened Event Viewer and navigated to Security logs
-- Filtered logs using Event ID 4625 (failed login attempts)
-- Analyzed multiple log entries to identify patterns
-
----
-
-## 📊 What I Observed
-
-- Multiple failed login attempts were recorded within a short time frame
-- All attempts showed **Logon Type 2**, indicating interactive login
-- The failure reason was due to incorrect password
-- Repeated login failures for the same system indicate suspicious behavior
+- Simulated multiple failed login attempts using incorrect credentials
+- Accessed Windows Event Viewer and navigated to Security logs
+- Filtered events using **Event ID 4625 (failed login attempts)**
+- Examined key fields such as:
+  - Account Name
+  - Logon Type
+  - Failure Reason
+  - Timestamp
+- Correlated multiple log entries to identify abnormal patterns
 
 ---
 
-## 🚨 What This Means
+## 📊 Key Findings
 
-This pattern is consistent with a potential brute force attack, where multiple password attempts are made in a short period of time.
-
-Even though this was a simulated scenario, it reflects how real-world attacks can be identified using log analysis.
+- Multiple failed login attempts were observed within a short time frame
+- Logon Type 2 confirmed interactive login attempts from the local system
+- Failure reason indicated incorrect password usage
+- Repeated authentication failures for the same system indicate abnormal login behavior
 
 ---
 
-## 📸 Screenshots
+## 🔎 Analysis
+
+The observed pattern of repeated failed login attempts within a short time window is consistent with brute force attack behavior.
+
+In real-world environments, such activity may indicate an attacker attempting to gain unauthorized access by trying multiple password combinations.
+
+Although this was a controlled simulation, the detection approach remains the same for real incidents.
+
+---
+
+## 🛡️ Recommended Actions
+
+- Implement account lockout policies after multiple failed attempts
+- Monitor authentication logs for repeated failures
+- Configure alerts for suspicious login patterns
+- Investigate source systems in case of real-world occurrences
+
+---
+
+## 📸 Evidence
 
 ### Filtered Logs (Event ID 4625)
 ![Filtered Logs](screenshots/filtered_logs.png)
@@ -49,19 +65,22 @@ Even though this was a simulated scenario, it reflects how real-world attacks ca
 ### Multiple Failed Login Attempts
 ![Multiple Failures](screenshots/multiple_failures.png)
 
-### Event Details View
+### Event Details
 ![Event Details](screenshots/event_details.png)
 
 ---
 
-## 🧠 What I Learned
+## 🧠 Learning Outcome
 
-- How Windows logs failed login attempts using Event ID 4625
-- How to identify suspicious patterns based on frequency and timing
-- The importance of log analysis in detecting unauthorized access attempts
+- Gained hands-on experience in analyzing Windows Security logs
+- Understood how authentication failures are recorded and interpreted
+- Learned to identify suspicious patterns based on frequency and timing
+- Developed foundational skills required for SOC monitoring and incident investigation
 
 ---
 
-## 🎯 Next Step
+## 🎯 Conclusion
 
-I will continue building more SOC-focused projects, including network traffic analysis and SIEM-based monitoring.
+This project demonstrates how simple log analysis can be used to detect suspicious authentication behavior.
+
+Such techniques are fundamental in Security Operations Centers (SOC) for identifying potential threats and responding to unauthorized access attempts.
