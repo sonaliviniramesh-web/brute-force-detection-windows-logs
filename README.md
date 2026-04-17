@@ -46,6 +46,8 @@ In real-world environments, such activity may indicate an attacker attempting to
 
 Further investigation would require validating source IP and login origin in a real-world environment. This activity would require further validation of source origin and correlation with additional logs in a real-world SOC environment.
 
+In a real-world scenario, determining a brute force attack would require analyzing the frequency and time window of failed attempts rather than isolated events.
+
 ---
 
 ## 🛡️ Recommended Actions
