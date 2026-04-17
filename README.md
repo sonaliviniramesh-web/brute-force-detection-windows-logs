@@ -42,9 +42,9 @@ A controlled brute force scenario was simulated on a local system to understand 
 
 The observed pattern of repeated failed login attempts within a short time window is consistent with brute force attack behavior.
 
-In real-world environments, such activity may indicate an attacker attempting to gain unauthorized access by trying multiple password combinations.
+In real-world environments, such activity may indicate an attacker attempting to gain unauthorized access by trying multiple password combinations.Although this was a controlled simulation, the detection approach remains the same for real incidents.
 
-Although this was a controlled simulation, the detection approach remains the same for real incidents.
+Further investigation would require validating source IP and login origin in a real-world environment.
 
 ---
 
